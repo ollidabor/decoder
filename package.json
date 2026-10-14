@@ -1,0 +1,26 @@
+{
+  "name": "decoder",
+  "version": "1.0.0",
+  "description": "Lightweight, zero-dependency document redaction and key-based unredaction tool.",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "bin": {
+    "decoder": "./src/cli.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --test-reporter=spec \"test/**/*.test.ts\"",
+    "check": "npm run typecheck && npm test",
+    "demo": "node scripts/demo.ts",
+    "web": "node src/web/server.ts",
+    "decoder": "node src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3"
+  }
+}

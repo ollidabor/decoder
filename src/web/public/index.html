@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Decoder</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Decoder</h1>
+    <p>Redact keywords and phrases from a document, and restore them with a key. Runs locally only.</p>
+  </header>
+
+  <main>
+    <section class="panel" aria-labelledby="redact-title">
+      <h2 id="redact-title">1 · Redact</h2>
+      <label for="keywords">Keywords and phrases</label>
+      <input id="keywords" type="text" autocomplete="off" spellcheck="false"
+             placeholder="Hello world &quot;Boston Red Sox&quot;, 'Pepperoni Pizza', beer">
+      <label for="source">Document text</label>
+      <textarea id="source" rows="9" spellcheck="false"></textarea>
+      <label for="redact-key">Key (optional, min. 12 characters - leave empty to generate one)</label>
+      <input id="redact-key" type="password" autocomplete="off" spellcheck="false">
+      <label class="inline"><input id="irreversible" type="checkbox"> Irreversible (Part 1 only, no envelope)</label>
+      <button id="redact-btn" type="button">Redact</button>
+    </section>
+
+    <section class="panel" aria-labelledby="unredact-title">
+      <h2 id="unredact-title">2 · Unredact</h2>
+      <label for="redacted">Redacted document</label>
+      <textarea id="redacted" rows="9" spellcheck="false"></textarea>
+      <label for="unredact-key">Key</label>
+      <div class="row">
+        <input id="unredact-key" type="password" autocomplete="off" spellcheck="false">
+        <button id="toggle-key" type="button" class="secondary" aria-pressed="false">Show</button>
+      </div>
+      <button id="unredact-btn" type="button">Unredact</button>
+      <label for="restored">Restored document</label>
+      <textarea id="restored" rows="9" readonly></textarea>
+    </section>
+  </main>
+
+  <p id="status" role="status" aria-live="polite"></p>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Private presentation notes - never commit
+README.private.md
+*.private.md
+
+# Secrets and generated artifacts - never commit
+.env
+.env.*
+*.key
+*.redacted.txt
+*.unredacted.txt
+out/
+tmp/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.log
